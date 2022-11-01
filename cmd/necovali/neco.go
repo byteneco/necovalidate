@@ -1,14 +1,14 @@
 package main
 
 import (
-	"fmt"
 	"github.com/byteneco/necovalidate"
 )
 
 func main() {
-	spec, err := necovalidate.NewParser().ParseFile("validate.go")
+	p := necovalidate.NewParser()
+	err := p.ParseFile("validate.go")
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%v", spec)
+	p.Generate()
 }

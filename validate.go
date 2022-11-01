@@ -6,13 +6,16 @@ func validate() {
 
 }
 
-type Ele interface {
-	int
-}
-
-type Customer[T Ele, L Ele] struct {
+type Customer struct {
 	// @Email
 	// @Max 10
+	// @Min 10
+	// @NotEmpty
 	Name string
 	Age  int
+}
+
+type F struct {
+	// @Email
+	Email string
 }
